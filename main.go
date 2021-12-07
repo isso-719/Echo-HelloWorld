@@ -30,6 +30,7 @@ func main() {
 	e.GET("/hello/:name", Hello)
 	e.GET("/form", FormGet)
 	e.POST("/form", FormPost)
+	e.GET("/array", Array)
 
 	// If you are not using port 1323, please change to your port number.
 	e.Logger.Fatal(e.Start(":1323"))
@@ -60,5 +61,12 @@ func FormPost(c echo.Context) error {
 	Name := c.FormValue("onamae")
 	return c.Render(http.StatusOK, "form_post.html", map[string]interface{}{
 		"name": Name,
+	})
+}
+
+func Array(c echo.Context) error {
+	Array := []string{"Go", "Ruby", "Python", "JavaScript"}
+	return c.Render(http.StatusOK, "array.html", map[string]interface{}{
+		"array": Array,
 	})
 }
