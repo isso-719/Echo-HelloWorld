@@ -65,8 +65,8 @@ func FormPost(c echo.Context) error {
 }
 
 func Array(c echo.Context) error {
-	Array := []string{"Go", "Ruby", "Python", "JavaScript"}
+	Languages := []string{"Go", "Ruby", "Python", "JavaScript"}
 	return c.Render(http.StatusOK, "array.html", map[string]interface{}{
-		"array": Array,
+		"languages": Languages,
 	})
 }

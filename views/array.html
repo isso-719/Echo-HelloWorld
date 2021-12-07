@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>言語リスト</h1>
-    {{ range $var := .array }}
-        <p>{{ $var }}</p>
+    {{ range $lang := .languages }}
+        <p>{{ $lang }}</p>
     {{ end }}
 </body>
 </html>
